@@ -45,7 +45,7 @@ function getPalindromes(txt) {
 function findLongestWords(txt) {
 	var wordArray = txt.split(/[\s,]+|\+|\:|\-/);
 	var lengthCounter = 0;
-	var currLongest = {};
+	var currLongest = [];
 
 	for (var i = 0; i < wordArray.length; i++ ) {
 		if (lengthCounter < wordArray[i].length) {
@@ -54,13 +54,9 @@ function findLongestWords(txt) {
 		}
 	}
 
-	arr.sort(function(a, b){
-		// ASC  -> a.length - b.length
-		// DESC -> b.length - a.length
-		return b.length - a.length;
-	});
+	
 
-	return currLongest;
+	return currLongest.reverse();
 }
 
 function mostFrequentWordsFunc(txt) {
